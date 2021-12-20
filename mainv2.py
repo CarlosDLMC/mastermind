@@ -6,7 +6,7 @@ import sys
 
 class ProxyManager:
 
-    __BMP = "/home/mentefria/Downloads/browsermob-proxy-2.1.4/bin/browsermob-proxy"
+    __BMP = "browsermob-proxy-2.1.4/bin/browsermob-proxy"
 
     def __init__(self):
         self.__server = Server(self.__BMP)
@@ -28,8 +28,8 @@ class ProxyManager:
     def server(self):
         return self.__server
 
-user = "giordano.calderon@hotmail.com"
-password = "IA6AdJCgQ5nwKYJBAH2J"
+user = ""
+password = ""
 
 
 
