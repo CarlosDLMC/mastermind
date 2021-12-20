@@ -6,7 +6,7 @@ import sys
 
 class ProxyManager:
 
-    __BMP = "browsermob-proxy-2.1.4/bin/browsermob-proxy"
+    __BMP = "browsermob-proxy"
 
     def __init__(self):
         self.__server = Server(self.__BMP)
@@ -79,8 +79,11 @@ class Courses():
             try:
                 continuar = self.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div[2]/div/div[1]/div/main/section/div/div[2]/div/footer/button/div/div/span")
             except:
-                print("Botón no encontrado")
-                return
+                try:
+                    continuar = self.driver.find_element_by_xpath('//*[@id="modal-content"]/section/div/div/button/div/div/span')
+                except:
+                    input('boton no encontrado, pulsa para continuar....')
+                    return
         continuar.click()
 
     def download(self, url):
